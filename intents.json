@@ -1,0 +1,60 @@
+{"intents": [
+
+        {"tag": "greeting",
+
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
+
+         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
+
+         "context_set": ""
+
+        },
+
+        {"tag": "goodbye",
+
+         "patterns": ["Bye", "See you later", "Goodbye"],
+
+         "responses": ["See you later, thanks for asking", "Have a nice day", "Bye! Come back again."]
+
+        },
+
+        {"tag": "thanks",
+
+         "patterns": ["Thanks", "Thank you", "That's helpful"],
+
+         "responses": ["Happy to help!", "Any time!", "My pleasure"]
+
+        },
+
+        {"tag": "Games",
+
+         "patterns": ["What are all games can play", "What games are there?", "I just want to know game events?","Can you provide me link to register games?" ],
+
+         "responses": ["See the list of games and the links to register ", "list of games 1. basket ball 2. volley ball 3.badminton 4.snookers"]
+
+        },
+
+        {"tag": "food",
+
+         "patterns": ["What special food on foundation day?", "What kinds of foods are there on foundation day?", "What do you sell?" ],
+
+         "responses": ["keep your stomach HUNGRY :), you will have a blast."]
+
+        },
+	    {"tag": "yes",
+
+	     "patterns": ["yes", "yeah", "wow!","hmm","ohh"],
+
+	     "responses": ["lovely, good to hear","good"]
+
+	    },
+
+	    {"tag": "location",
+
+	     "patterns": ["What is the location of foundation day?", "What is the location?", "where do we going to celebrate foundation day?"],
+
+	     "responses": ["let's celebrate in chennai Trade Center","Are you ok with chennai trabe center?"]
+
+	    }
+	       ]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate App</title>
+    <script>
+        function submitMessage() {
+            var message = document.getElementById('message').value;
+
+            // Clear the input field
+            document.getElementById('message').value = '';
+
+            // Display the message in the chat
+            var messages = document.getElementById('messages');
+            var messageElement = document.createElement('p');
+            messageElement.textContent = message;
+            messages.appendChild(messageElement);
+
+            // Send a POST request to the /translate route with the chat message
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/translate', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var translatedMessage = response.translated_message;
+
+                    // Display the translated message in the chat
+                    var translatedMessageElement = document.createElement('p');
+                    translatedMessageElement.textContent = translatedMessage;
+                    messages.appendChild(translatedMessageElement);
+                }
+            };
+            xhr.send('message=' + encodeURIComponent(message));
+        }
+    </script>
+</head>
+<body>
+    <div id="messages"></div>
+    <form onsubmit="event.preventDefault(); submitMessage();">
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
